@@ -2,6 +2,12 @@
 WiringPi: An implementation of most of the Arduino Wiring
 	functions for the Raspberry Pi
 
+Build with:
+    python setup.py build_ext --inplace
+    
+Install with?:
+    sudo python setup.py install_lib
+
 Full details at:
 	https://projects.drogon.net/raspberry-pi/wiringpi/
 
