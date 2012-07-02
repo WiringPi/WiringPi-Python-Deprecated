@@ -3014,9 +3014,9 @@ SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)
 
 
 
-#include "wiringPi.h";
-#include "wiringShift.h";
-#include "serial.h";
+#include "wiringPi.h"
+#include "wiringShift.h"
+#include "serial.h"
 
 #ifdef __cplusplus
 extern "C" {

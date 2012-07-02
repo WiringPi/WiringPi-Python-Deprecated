@@ -471,9 +471,6 @@ void digitalWrite (int pin, int value)
 {
   int gpioPin ;
 
-  if ((pin < 0) || (pin >= NUM_PINS))
-    return ;
-
   if (gpioPinMode == WPI_MODE_PINS)
   {
     if ((pin < 0) || (pin >= NUM_PINS))

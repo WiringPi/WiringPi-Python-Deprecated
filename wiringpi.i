@@ -20,7 +20,7 @@ extern int   serialDataAvail (int fd) ;
 extern int   serialGetchar   (int fd) ;
 
 %{
-#include "wiringPi.h";
-#include "wiringShift.h";
-#include "serial.h";
+#include "wiringPi.h"
+#include "wiringShift.h"
+#include "serial.h"
 %}
