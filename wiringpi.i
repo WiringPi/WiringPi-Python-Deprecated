@@ -18,6 +18,7 @@ extern void  serialPutchar   (int fd, uint8_t c) ;
 extern void  serialPuts      (int fd, char *s) ;
 extern int   serialDataAvail (int fd) ;
 extern int   serialGetchar   (int fd) ;
+extern void  serialPrintf    (int fd, char *message, ...) ;
 
 %{
 #include "wiringPi.h"
