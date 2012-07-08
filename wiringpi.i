@@ -20,6 +20,10 @@ extern int   serialDataAvail (int fd) ;
 extern int   serialGetchar   (int fd) ;
 extern void  serialPrintf    (int fd, char *message, ...) ;
 
+extern void         delay             (unsigned int howLong) ;
+extern void         delayMicroseconds (unsigned int howLong) ;
+extern unsigned int millis            (void) ;
+
 %{
 #include "wiringPi.h"
 #include "wiringShift.h"
