@@ -3191,6 +3191,29 @@ SWIG_From_unsigned_SS_char  (unsigned char value)
 }
 
 
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
+{
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v > UINT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = (unsigned int)(v);
+    }
+  }  
+  return res;
+}
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_unsigned_SS_int  (unsigned int value)
+{
+  return PyInt_FromSize_t((size_t) value);
+}
+
+
 SWIGINTERN swig_type_info*
 SWIG_pchar_descriptor(void)
 {
@@ -3283,29 +3306,6 @@ SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)
 
 
 
-SWIGINTERN int
-SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
-{
-  unsigned long v;
-  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
-  if (SWIG_IsOK(res)) {
-    if ((v > UINT_MAX)) {
-      return SWIG_OverflowError;
-    } else {
-      if (val) *val = (unsigned int)(v);
-    }
-  }  
-  return res;
-}
-
-
-SWIGINTERNINLINE PyObject*
-  SWIG_From_unsigned_SS_int  (unsigned int value)
-{
-  return PyInt_FromSize_t((size_t) value);
-}
-
-
 #include "wiringPi.h"
 #include "wiringShift.h"
 #include "serial.h"
@@ -3319,6 +3319,32 @@ SWIGINTERN PyObject *_wrap_wiringPiSetup(PyObject *SWIGUNUSEDPARM(self), PyObjec
   
   if (!PyArg_ParseTuple(args,(char *)":wiringPiSetup")) SWIG_fail;
   result = (int)wiringPiSetup();
+  resultobj = SWIG_From_int((int)(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_wiringPiSetupSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)":wiringPiSetupSys")) SWIG_fail;
+  result = (int)wiringPiSetupSys();
+  resultobj = SWIG_From_int((int)(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_wiringPiSetupGpio(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)":wiringPiSetupGpio")) SWIG_fail;
+  result = (int)wiringPiSetupGpio();
   resultobj = SWIG_From_int((int)(result));
   return resultobj;
 fail:
@@ -3537,63 +3563,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_shiftOutWithDelay(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  uint8_t arg1 ;
-  uint8_t arg2 ;
-  uint8_t arg3 ;
-  uint8_t arg4 ;
-  int arg5 ;
-  unsigned char val1 ;
-  int ecode1 = 0 ;
-  unsigned char val2 ;
-  int ecode2 = 0 ;
-  unsigned char val3 ;
-  int ecode3 = 0 ;
-  unsigned char val4 ;
-  int ecode4 = 0 ;
-  int val5 ;
-  int ecode5 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  PyObject * obj4 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOOO:shiftOutWithDelay",&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
-  ecode1 = SWIG_AsVal_unsigned_SS_char(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "shiftOutWithDelay" "', argument " "1"" of type '" "uint8_t""'");
-  } 
-  arg1 = (uint8_t)(val1);
-  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "shiftOutWithDelay" "', argument " "2"" of type '" "uint8_t""'");
-  } 
-  arg2 = (uint8_t)(val2);
-  ecode3 = SWIG_AsVal_unsigned_SS_char(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "shiftOutWithDelay" "', argument " "3"" of type '" "uint8_t""'");
-  } 
-  arg3 = (uint8_t)(val3);
-  ecode4 = SWIG_AsVal_unsigned_SS_char(obj3, &val4);
-  if (!SWIG_IsOK(ecode4)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "shiftOutWithDelay" "', argument " "4"" of type '" "uint8_t""'");
-  } 
-  arg4 = (uint8_t)(val4);
-  ecode5 = SWIG_AsVal_int(obj4, &val5);
-  if (!SWIG_IsOK(ecode5)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "shiftOutWithDelay" "', argument " "5"" of type '" "int""'");
-  } 
-  arg5 = (int)(val5);
-  shiftOutWithDelay(arg1,arg2,arg3,arg4,arg5);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_shiftIn(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   uint8_t arg1 ;
@@ -3628,6 +3597,61 @@ SWIGINTERN PyObject *_wrap_shiftIn(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
   arg3 = (uint8_t)(val3);
   result = shiftIn(arg1,arg2,arg3);
   resultobj = SWIG_From_unsigned_SS_char((unsigned char)(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delay(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  unsigned int arg1 ;
+  unsigned int val1 ;
+  int ecode1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delay",&obj0)) SWIG_fail;
+  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "delay" "', argument " "1"" of type '" "unsigned int""'");
+  } 
+  arg1 = (unsigned int)(val1);
+  delay(arg1);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delayMicroseconds(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  unsigned int arg1 ;
+  unsigned int val1 ;
+  int ecode1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delayMicroseconds",&obj0)) SWIG_fail;
+  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "delayMicroseconds" "', argument " "1"" of type '" "unsigned int""'");
+  } 
+  arg1 = (unsigned int)(val1);
+  delayMicroseconds(arg1);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_millis(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  unsigned int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)":millis")) SWIG_fail;
+  result = (unsigned int)millis();
+  resultobj = SWIG_From_unsigned_SS_int((unsigned int)(result));
   return resultobj;
 fail:
   return NULL;
@@ -3844,64 +3868,11 @@ SWIGINTERN PyObject *_wrap_serialPrintf(PyObject *SWIGUNUSEDPARM(self), PyObject
 }
 
 
-SWIGINTERN PyObject *_wrap_delay(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  unsigned int arg1 ;
-  unsigned int val1 ;
-  int ecode1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delay",&obj0)) SWIG_fail;
-  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "delay" "', argument " "1"" of type '" "unsigned int""'");
-  } 
-  arg1 = (unsigned int)(val1);
-  delay(arg1);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delayMicroseconds(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  unsigned int arg1 ;
-  unsigned int val1 ;
-  int ecode1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delayMicroseconds",&obj0)) SWIG_fail;
-  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "delayMicroseconds" "', argument " "1"" of type '" "unsigned int""'");
-  } 
-  arg1 = (unsigned int)(val1);
-  delayMicroseconds(arg1);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_millis(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)":millis")) SWIG_fail;
-  result = (unsigned int)millis();
-  resultobj = SWIG_From_unsigned_SS_int((unsigned int)(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"wiringPiSetup", _wrap_wiringPiSetup, METH_VARARGS, NULL},
+	 { (char *)"wiringPiSetupSys", _wrap_wiringPiSetupSys, METH_VARARGS, NULL},
+	 { (char *)"wiringPiSetupGpio", _wrap_wiringPiSetupGpio, METH_VARARGS, NULL},
 	 { (char *)"wiringPiGpioMode", _wrap_wiringPiGpioMode, METH_VARARGS, NULL},
 	 { (char *)"pullUpDnControl", _wrap_pullUpDnControl, METH_VARARGS, NULL},
 	 { (char *)"pinMode", _wrap_pinMode, METH_VARARGS, NULL},
@@ -3909,8 +3880,10 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"pwmWrite", _wrap_pwmWrite, METH_VARARGS, NULL},
 	 { (char *)"digitalRead", _wrap_digitalRead, METH_VARARGS, NULL},
 	 { (char *)"shiftOut", _wrap_shiftOut, METH_VARARGS, NULL},
-	 { (char *)"shiftOutWithDelay", _wrap_shiftOutWithDelay, METH_VARARGS, NULL},
 	 { (char *)"shiftIn", _wrap_shiftIn, METH_VARARGS, NULL},
+	 { (char *)"delay", _wrap_delay, METH_VARARGS, NULL},
+	 { (char *)"delayMicroseconds", _wrap_delayMicroseconds, METH_VARARGS, NULL},
+	 { (char *)"millis", _wrap_millis, METH_VARARGS, NULL},
 	 { (char *)"serialOpen", _wrap_serialOpen, METH_VARARGS, NULL},
 	 { (char *)"serialClose", _wrap_serialClose, METH_VARARGS, NULL},
 	 { (char *)"serialPutchar", _wrap_serialPutchar, METH_VARARGS, NULL},
@@ -3918,9 +3891,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"serialDataAvail", _wrap_serialDataAvail, METH_VARARGS, NULL},
 	 { (char *)"serialGetchar", _wrap_serialGetchar, METH_VARARGS, NULL},
 	 { (char *)"serialPrintf", _wrap_serialPrintf, METH_VARARGS, NULL},
-	 { (char *)"delay", _wrap_delay, METH_VARARGS, NULL},
-	 { (char *)"delayMicroseconds", _wrap_delayMicroseconds, METH_VARARGS, NULL},
-	 { (char *)"millis", _wrap_millis, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

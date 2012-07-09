@@ -27,14 +27,25 @@ class GPIO(object):
     LSBFIRST = 0
     WPI_MODE_PINS = 0
     WPI_MODE_GPIO = 1
+    WPI_MODE_SYS = 2
+    MODE_PINS = 0
+    MODE_GPIO = 1
+    MODE_SYS = 2
     INPUT = 0
     OUTPUT = 1
     PWM_OUTPUT = 2
     PUD_OFF = 0
     PUD_DOWN = 1
     PUD_UP = 2
-    def __init__(self):
-        wiringPiSetup()
+    MODE = 0
+    def __init__(self,pinmode=0):
+        self.MODE=pinmode
+        if pinmode==0:
+            wiringPiSetup()
+        elif pinmode==1:
+            wiringPiSetupGpio()
+        elif pinmode==2:
+            wiringPiSetupSys()
     def delay(self,*args):
         delay(*args)
     def delayMicroseconds(self,*args):
@@ -43,8 +54,6 @@ class GPIO(object):
         return millis()
     def pinMode(self,*args):
         pinMode(*args)
-    def gpioMode(self,*args):
-        wiringPiGpioMode(*args)
     def digitalWrite(self,*args):
         digitalWrite(*args)
     def pwmWrite(self,*args):
@@ -53,7 +62,5 @@ class GPIO(object):
         return digitalRead(*args)
     def shiftOut(self,*args):
         shiftOut(*args)
-    def shiftOutWithDelay(self,*args):
-        shiftOutWithDelay(*args)
     def shiftIn(self,*args):
         return shiftIn(*args)
