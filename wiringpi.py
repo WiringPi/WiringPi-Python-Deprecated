@@ -100,6 +100,10 @@ def shiftOut(*args):
   return _wiringpi.shiftOut(*args)
 shiftOut = _wiringpi.shiftOut
 
+def shiftOutWithDelay(*args):
+  return _wiringpi.shiftOutWithDelay(*args)
+shiftOutWithDelay = _wiringpi.shiftOutWithDelay
+
 def shiftIn(*args):
   return _wiringpi.shiftIn(*args)
 shiftIn = _wiringpi.shiftIn
