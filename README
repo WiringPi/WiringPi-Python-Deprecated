@@ -4,12 +4,25 @@ WiringPi: An implementation of most of the Arduino Wiring
 
 Prerequisites:
     You must have python-dev installed
+    If you manually rebuild the bindings with swig -python wiringpi.i
+    then cat wiringpi_class.py >> wiringpi.py to get the class-based wrapper
 
 Build with:
     python setup.py build_ext --inplace
     
 Install with:
     sudo python setup.py install
+
+Class-based Usage:
+    import wiringpi
+    io = wiringpi.GPIO()
+    io.pinMode(1,io.OUTPUT)
+    io.digitalWrite(1,io.HIGH)
+
+    Serial:
+    serial = wiringpi.Serial('/dev/ttyAMA0',9600)
+    serial.puts("hello")
+    serial.close()
 
 Usage:
     import wiringpi
