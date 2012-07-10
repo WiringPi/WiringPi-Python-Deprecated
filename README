@@ -7,10 +7,13 @@ Prerequisites:
     If you manually rebuild the bindings with swig -python wiringpi.i
     then cat wiringpi_class.py >> wiringpi.py to get the class-based wrapper
 
-Build with:
-    python setup.py build_ext --inplace
+Get/setup repo:
+    git clone https://github.com/Gadgetoid/WiringPi-Python.git
+    cd WiringPi-Python
+    git submodule init
+    git submodule update
     
-Install with:
+Build & install with:
     sudo python setup.py install
 
 Class-based Usage:
