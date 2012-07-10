@@ -10,8 +10,7 @@ Prerequisites:
 Get/setup repo:
     git clone https://github.com/Gadgetoid/WiringPi-Python.git
     cd WiringPi-Python
-    git submodule init
-    git submodule update
+    git submodule update --init
     
 Build & install with:
     sudo python setup.py install
