@@ -1,3 +1,19 @@
+HIGH = 1
+LOW = 0
+MSBFIRST = 1
+LSBFIRST = 0
+WPI_MODE_PINS = 0
+WPI_MODE_GPIO = 1
+WPI_MODE_SYS = 2
+MODE_PINS = 0
+MODE_GPIO = 1
+MODE_SYS = 2
+INPUT = 0
+OUTPUT = 1
+PWM_OUTPUT = 2
+PUD_OFF = 0
+PUD_DOWN = 1
+PUD_UP = 2
 
 class Serial(object):
     device = '/dev/ttyAMA0'
@@ -62,5 +78,7 @@ class GPIO(object):
         return digitalRead(*args)
     def shiftOut(self,*args):
         shiftOut(*args)
+    def shiftOutWithDelay(self,*args):
+        shiftOutWithDelay(*args)
     def shiftIn(self,*args):
         return shiftIn(*args)
