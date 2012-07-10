@@ -8,10 +8,9 @@ Prerequisites:
     then cat wiringpi_class.py >> wiringpi.py to get the class-based wrapper
 
 Get/setup repo:
-    git clone https://github.com/Gadgetoid/WiringPi-Python.git
+    git clone https://github.com/WiringPi/WiringPi-Python.git
     cd WiringPi-Python
-    git submodule init
-    git submodule update
+    git submodule update --init
     
 Build & install with:
     sudo python setup.py install
