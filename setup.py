@@ -3,11 +3,11 @@
 from distutils.core import setup, Extension
 
 wiringpi_module = Extension('_wiringpi',
-                            sources=['wiringpi_wrap.c', 'wiringPi.c', 'serial.c', 'wiringShift.c'],
+                            sources=['wiringpi_wrap.c', 'WiringPi/wiringPi/wiringPi.c', 'WiringPi/wiringPi/serial.c', 'WiringPi/wiringPi/wiringShift.c'],
                             )
 
 setup (name = 'wiringpi',
-        version = '0.1',
+        version = '1.0',
         author = "Philip Howard",
         description = """WiringPi for Python""",
         ext_modules = [wiringpi_module],
