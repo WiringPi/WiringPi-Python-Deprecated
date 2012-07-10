@@ -3569,7 +3569,7 @@ SWIGINTERN PyObject *_wrap_shiftOutWithDelay(PyObject *SWIGUNUSEDPARM(self), PyO
   uint8_t arg2 ;
   uint8_t arg3 ;
   uint8_t arg4 ;
-  uint8_t arg5 ;
+  int arg5 ;
   unsigned char val1 ;
   int ecode1 = 0 ;
   unsigned char val2 ;
@@ -3578,7 +3578,7 @@ SWIGINTERN PyObject *_wrap_shiftOutWithDelay(PyObject *SWIGUNUSEDPARM(self), PyO
   int ecode3 = 0 ;
   unsigned char val4 ;
   int ecode4 = 0 ;
-  unsigned char val5 ;
+  int val5 ;
   int ecode5 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
@@ -3607,11 +3607,11 @@ SWIGINTERN PyObject *_wrap_shiftOutWithDelay(PyObject *SWIGUNUSEDPARM(self), PyO
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "shiftOutWithDelay" "', argument " "4"" of type '" "uint8_t""'");
   } 
   arg4 = (uint8_t)(val4);
-  ecode5 = SWIG_AsVal_unsigned_SS_char(obj4, &val5);
+  ecode5 = SWIG_AsVal_int(obj4, &val5);
   if (!SWIG_IsOK(ecode5)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "shiftOutWithDelay" "', argument " "5"" of type '" "uint8_t""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "shiftOutWithDelay" "', argument " "5"" of type '" "int""'");
   } 
-  arg5 = (uint8_t)(val5);
+  arg5 = (int)(val5);
   shiftOutWithDelay(arg1,arg2,arg3,arg4,arg5);
   resultobj = SWIG_Py_Void();
   return resultobj;
