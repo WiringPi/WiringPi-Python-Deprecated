@@ -16,7 +16,7 @@ setup(
     name = 'wiringpi',
     version = '1.0',
     author = "Philip Howard",
-    packages = ["wiringpi"],
+    packages = ["WiringPi"],
     url = 'https://github.com/WiringPi/WiringPi-Python/',
     description = """A python interface to WiringPi library which allows for
     easily interfacing with the GPIO pins of the Raspberry Pi. Also supports

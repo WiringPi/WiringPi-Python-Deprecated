@@ -13,7 +13,6 @@ extern void digitalWrite      (int pin, int value) ;
 extern void pwmWrite          (int pin, int value) ;
 extern int  digitalRead       (int pin) ;
 extern void shiftOut          (uint8_t dPin, uint8_t cPin, uint8_t order, uint8_t val);
-extern void shiftOutWithDelay (uint8_t dPin, uint8_t cPin, uint8_t order, uint8_t val, int delay);
 extern uint8_t shiftIn        (uint8_t dPin, uint8_t cPin, uint8_t order);
 
 extern void         delay             (unsigned int howLong) ;
@@ -31,5 +30,5 @@ extern void  serialPrintf    (int fd, char *message, ...) ;
 %{
 #include "WiringPi/wiringPi/wiringPi.h"
 #include "WiringPi/wiringPi/wiringShift.h"
-#include "WiringPi/wiringPi/serial.h"
+#include "WiringPi/wiringPi/wiringSerial.h"
 %}
