@@ -7,7 +7,7 @@ wiringpi_module = Extension(
     sources=[
         'wiringpi_wrap.c',
         'WiringPi/wiringPi/wiringPi.c',
-        'WiringPi/wiringPi/serial.c',
+        'WiringPi/wiringPi/wiringSerial.c',
         'WiringPi/wiringPi/wiringShift.c'
     ],
 )

@@ -3352,27 +3352,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_wiringPiGpioMode(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  int arg1 ;
-  int val1 ;
-  int ecode1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:wiringPiGpioMode",&obj0)) SWIG_fail;
-  ecode1 = SWIG_AsVal_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "wiringPiGpioMode" "', argument " "1"" of type '" "int""'");
-  } 
-  arg1 = (int)(val1);
-  wiringPiGpioMode(arg1);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_pullUpDnControl(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   int arg1 ;
@@ -3873,7 +3852,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"wiringPiSetup", _wrap_wiringPiSetup, METH_VARARGS, NULL},
 	 { (char *)"wiringPiSetupSys", _wrap_wiringPiSetupSys, METH_VARARGS, NULL},
 	 { (char *)"wiringPiSetupGpio", _wrap_wiringPiSetupGpio, METH_VARARGS, NULL},
-	 { (char *)"wiringPiGpioMode", _wrap_wiringPiGpioMode, METH_VARARGS, NULL},
 	 { (char *)"pullUpDnControl", _wrap_pullUpDnControl, METH_VARARGS, NULL},
 	 { (char *)"pinMode", _wrap_pinMode, METH_VARARGS, NULL},
 	 { (char *)"digitalWrite", _wrap_digitalWrite, METH_VARARGS, NULL},

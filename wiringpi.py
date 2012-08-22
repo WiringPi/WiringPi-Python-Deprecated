@@ -80,10 +80,6 @@ def wiringPiSetupGpio():
   return _wiringpi.wiringPiSetupGpio()
 wiringPiSetupGpio = _wiringpi.wiringPiSetupGpio
 
-def wiringPiGpioMode(*args):
-  return _wiringpi.wiringPiGpioMode(*args)
-wiringPiGpioMode = _wiringpi.wiringPiGpioMode
-
 def pullUpDnControl(*args):
   return _wiringpi.pullUpDnControl(*args)
 pullUpDnControl = _wiringpi.pullUpDnControl
