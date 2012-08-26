@@ -1,0 +1,10 @@
+README
+setup.py
+wiringpi_wrap.c
+WiringPi/wiringPi/wiringPi.c
+WiringPi/wiringPi/wiringSerial.c
+WiringPi/wiringPi/wiringShift.c
+wiringpi.egg-info/PKG-INFO
+wiringpi.egg-info/SOURCES.txt
+wiringpi.egg-info/dependency_links.txt
+wiringpi.egg-info/top_level.txt
