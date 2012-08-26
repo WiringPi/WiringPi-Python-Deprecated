@@ -23,5 +23,6 @@ setup(
     i2c and SPI""",
     long_description=open('README.md').read(),
     ext_modules = [wiringpi_module],
+    py_modules = ["wiringpi"],
     install_requires=[],
 )
