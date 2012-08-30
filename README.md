@@ -1,21 +1,31 @@
-
 WiringPi: An implementation of most of the Arduino Wiring
 	functions for the Raspberry Pi
 
-Prerequisites:
-    You must have python-dev installed
-    If you manually rebuild the bindings with swig -python wiringpi.i
-    then cat wiringpi_class.py >> wiringpi.py to get the class-based wrapper
+**Prerequisites:**
 
-Get/setup repo:
+You must have python-dev installed
+
+    sudo apt-get install python-dev
+    
+If you manually rebuild the bindings with swig -python wiringpi.i
+then cat wiringpi_class.py >> wiringpi.py to get the class-based wrapper
+
+**Get/setup repo:**
+    
     git clone https://github.com/WiringPi/WiringPi-Python.git
+    
     cd WiringPi-Python
+    
     git submodule update --init
     
-Build & install with:
+
+**Build & install with:**
+
     sudo python setup.py install
 
-Class-based Usage:
+
+**Class-based Usage:**
+
     import wiringpi
     io = wiringpi.GPIO(wiringpi.GPIO.WPI_MODE_PINS)
     io.pinMode(1,io.OUTPUT)
@@ -32,7 +42,8 @@ Class-based Usage:
     serial.puts("hello")
     serial.close()
 
-Usage:
+**Usage:**
+
     import wiringpi
     wiringpi.wiringPiSetup // For sequential pin numbering, one of these MUST be called before using IO functions
     OR
@@ -53,6 +64,8 @@ Usage:
     wiringpi.serialPuts(serial,"hello")
     wiringpi.serialClose(serial) // Pass in ID
 
+
 Full details at:
+
 	https://projects.drogon.net/raspberry-pi/wiringpi/
 
