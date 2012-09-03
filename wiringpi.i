@@ -26,8 +26,27 @@ extern int   serialDataAvail (int fd) ;
 extern int   serialGetchar   (int fd) ;
 extern void  serialPrintf    (int fd, char *message, ...) ;
 
+extern int wiringPiSPIGetFd  (int channel) ;
+extern int wiringPiSPIDataRW (int channel, unsigned char *data, int len) ;
+extern int wiringPiSPISetup  (int channel, int speed) ;
+
+extern void gertboardAnalogWrite (int chan, int value) ;
+extern int  gertboardAnalogRead  (int chan) ;
+extern int  gertboardSPISetup    (void) ;
+
+extern int          setupNesJoystick (int dPin, int cPin, int lPin) ;
+extern unsigned int  readNesJoystick (int joystick) ;
+
+extern int  softPwmCreate (int pin, int value, int range) ;
+extern void softPwmWrite  (int pin, int value) ;
+
 %{
 #include "WiringPi/wiringPi/wiringPi.h"
 #include "WiringPi/wiringPi/wiringShift.h"
 #include "WiringPi/wiringPi/wiringSerial.h"
+#include "WiringPi/wiringPi/gertboard.h"
+#include "WiringPi/wiringPi/wiringPiSPI.h"
+#include "WiringPi/wiringPi/softPwm.h"
+#include "WiringPi/wiringPi/piNes.h"
+#include "WiringPi/wiringPi/lcd.h"
 %}

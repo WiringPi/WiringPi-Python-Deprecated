@@ -15,6 +15,12 @@ PUD_OFF = 0
 PUD_DOWN = 1
 PUD_UP = 2
 
+class nes(object):
+    def setupNesJoystick(self,*args):
+        return setupNesJoystick(*args)
+    def readNesJoystick(self,*args):
+        return readNesJoystick(*args)
+
 class Serial(object):
     device = '/dev/ttyAMA0'
     baud = 9600
@@ -82,3 +88,9 @@ class GPIO(object):
         shiftOutWithDelay(*args)
     def shiftIn(self,*args):
         return shiftIn(*args)
+    def pullUpDnControl(self,*args):
+        return pullUpDnControl(*args)
+    def softPwmCreate(*args):
+        return softPwmCrate(*args)
+    def softPwmWrite(*args):
+        return sofPwmWrite(*args)

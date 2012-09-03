@@ -147,6 +147,46 @@ serialGetchar = _wiringpi.serialGetchar
 def serialPrintf(*args):
   return _wiringpi.serialPrintf(*args)
 serialPrintf = _wiringpi.serialPrintf
+
+def wiringPiSPIGetFd(*args):
+  return _wiringpi.wiringPiSPIGetFd(*args)
+wiringPiSPIGetFd = _wiringpi.wiringPiSPIGetFd
+
+def wiringPiSPIDataRW(*args):
+  return _wiringpi.wiringPiSPIDataRW(*args)
+wiringPiSPIDataRW = _wiringpi.wiringPiSPIDataRW
+
+def wiringPiSPISetup(*args):
+  return _wiringpi.wiringPiSPISetup(*args)
+wiringPiSPISetup = _wiringpi.wiringPiSPISetup
+
+def gertboardAnalogWrite(*args):
+  return _wiringpi.gertboardAnalogWrite(*args)
+gertboardAnalogWrite = _wiringpi.gertboardAnalogWrite
+
+def gertboardAnalogRead(*args):
+  return _wiringpi.gertboardAnalogRead(*args)
+gertboardAnalogRead = _wiringpi.gertboardAnalogRead
+
+def gertboardSPISetup():
+  return _wiringpi.gertboardSPISetup()
+gertboardSPISetup = _wiringpi.gertboardSPISetup
+
+def setupNesJoystick(*args):
+  return _wiringpi.setupNesJoystick(*args)
+setupNesJoystick = _wiringpi.setupNesJoystick
+
+def readNesJoystick(*args):
+  return _wiringpi.readNesJoystick(*args)
+readNesJoystick = _wiringpi.readNesJoystick
+
+def softPwmCreate(*args):
+  return _wiringpi.softPwmCreate(*args)
+softPwmCreate = _wiringpi.softPwmCreate
+
+def softPwmWrite(*args):
+  return _wiringpi.softPwmWrite(*args)
+softPwmWrite = _wiringpi.softPwmWrite
 # This file is compatible with both classic and new-style classes.
 
 
@@ -234,3 +274,5 @@ class GPIO(object):
         shiftOutWithDelay(*args)
     def shiftIn(self,*args):
         return shiftIn(*args)
+    def pullUpDnControl(self,*args):
+        return pullUpDnControl(*args)

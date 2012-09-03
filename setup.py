@@ -12,13 +12,17 @@ wiringpi_module = Extension(
         'wiringpi_wrap.c',
         'WiringPi/wiringPi/wiringPi.c',
         'WiringPi/wiringPi/wiringSerial.c',
-        'WiringPi/wiringPi/wiringShift.c'
+        'WiringPi/wiringPi/wiringShift.c',
+        'WiringPi/wiringPi/wiringPiSPI.c',
+        'WiringPi/wiringPi/softPwm.c',
+        'WiringPi/wiringPi/piNes.c',
+        'WiringPi/wiringPi/gertboard.c'
     ],
 )
 
 setup(
     name = 'wiringpi',
-    version = '1.0.5',
+    version = '1.1.0',
     author = "Philip Howard",
     author_email = "phil@gadgetoid.com",
     url = 'https://github.com/WiringPi/WiringPi-Python/',
@@ -33,6 +37,10 @@ setup(
         'WiringPi/wiringPi/lcd.h',
         'WiringPi/wiringPi/wiringPi.h',
         'WiringPi/wiringPi/wiringSerial.h',
-        'WiringPi/wiringPi/wiringShift.h'
+        'WiringPi/wiringPi/wiringShift.h',
+        'WiringPi/wiringPi/wiringPiSPI.h',
+        'WiringPi/wiringPi/softPwm.h',
+        'WiringPi/wiringPi/piNes.h',
+        'WiringPi/wiringPi/gertboard.h'
         ]
 )
