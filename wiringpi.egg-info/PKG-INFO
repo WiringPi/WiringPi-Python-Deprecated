@@ -13,7 +13,7 @@ Description:
         	functions for the Raspberry Pi
         
         Prerequisites:
-            You must have python-dev installed
+            You must have python-dev and python-setuptools installed
             If you manually rebuild the bindings with swig -python wiringpi.i
             then cat wiringpi_class.py >> wiringpi.py to get the class-based wrapper
         
