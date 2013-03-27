@@ -8,7 +8,7 @@ Implements many Arduino Wiring functions for the Raspberry Pi, including Serial 
 Prerequisites
 =============
 
-You must have python-dev installed
+You must have python-dev and python-setuptools installed
 
 Class-based Usage
 =================

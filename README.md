@@ -3,9 +3,9 @@ WiringPi: An implementation of most of the Arduino Wiring
 
 **Prerequisites:**
 
-You must have python-dev installed
+You must have python-dev and python-setuptools installed
 
-    sudo apt-get install python-dev
+    sudo apt-get install python-dev python-setuptools 
     
 If you manually rebuild the bindings with swig -python wiringpi.i
 then cat wiringpi_class.py >> wiringpi.py to get the class-based wrapper
