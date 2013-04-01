@@ -1,6 +1,12 @@
 WiringPi: An implementation of most of the Arduino Wiring
 	functions for the Raspberry Pi
 
+This library is deprecated. WiringPi Version 2.x is here, and there's a new Python wrapper for it: https://github.com/WiringPi/WiringPi2-Python
+
+You can also simply: pip install wiringpi2
+
+Existing WiringPi-Python users are encouraged to migrate. The "WiringPi2" moniker was chosen for this library to avoid unexpected updates, breakage and panics!
+
 **Prerequisites:**
 
 You must have python-dev and python-setuptools installed
